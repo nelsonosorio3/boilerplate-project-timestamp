@@ -31,6 +31,7 @@ app.get("/api", (req, res)=>{
   res.json({unix, utc})
 });
 app.get("/api/:date", (req, res) =>{
+  const date = req.params.date; 
   if(Number.isNaN(parseInt(date))){ 
     return res.json({error: "Invalid Date"})
   }
